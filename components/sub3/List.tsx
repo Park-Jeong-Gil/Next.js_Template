@@ -11,10 +11,12 @@ import ListItem from './ListItem';
 export default function List({ initialData }: { initialData: Photo[] }) {
   const [page, setPage] = useState<number>(1);
 
-  const { data, isLoading, error } = useQuery({
+  const { isLoading, error } = useQuery({
     queryKey: ['photos', page],
     queryFn: () => getPhotoList(page),
   });
+
+  const data = initialData;
 
   // 페이지 변경 시
   const handleChange = (_event: React.ChangeEvent<unknown>, value: number) => {

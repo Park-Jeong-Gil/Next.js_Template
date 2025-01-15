@@ -12,7 +12,6 @@ export default function ListItem({ listInfo }: { listInfo: Photo }) {
           width={150}
           height={150}
           quality={75}
-          placeholder='blur'
           loading='lazy'
         />
         <strong>{listInfo.title}</strong>
