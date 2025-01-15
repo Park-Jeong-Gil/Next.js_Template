@@ -1,0 +1,35 @@
+@use '../common/mixin' as *;
+@use '../common/functions' as *;
+
+.lnb_nav {
+  @include mo {
+    border-bottom: movw(1) solid #ddd;
+    padding-bottom: movw(8);
+
+    .depth2 {
+      display: flex;
+
+      li + li {
+        margin-left: movw(8);
+      }
+    }
+  }
+
+  @include pc {
+    border-right: pcvw(1) solid #ddd;
+    height: 100%;
+    padding-right: pcvw(16);
+
+    .depth2 {
+      li + li {
+        margin-top: pcvw(8);
+      }
+    }
+  }
+
+  h3 {
+    @include pc {
+      margin-bottom: pcvw(16);
+    }
+  }
+}

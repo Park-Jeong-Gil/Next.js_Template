@@ -1,5 +1,5 @@
-import type { NextConfig } from "next";
-import path from "path";
+import type { NextConfig } from 'next';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   /**
@@ -13,11 +13,32 @@ const nextConfig: NextConfig = {
    * SEO 및 정적 파일 호스팅 시 일관된 URL 구조를 보장
    */
   trailingSlash: true,
-  // sassOptions 옵션 추가
   sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
-    // prependData 옵션 추가
-    // prependData: `@import "styles/_variables.scss"; @import "styles/_mixins.scss";`,
+    includePaths: [path.join(__dirname, 'app/styles')],
+    implementation: require('sass'), // 명시적으로 sass 구현체 지정
+    // logger: {
+    //   warn: function (message: string) {
+    //     // Dart Sass 레거시 API 경고 무시
+    //     if (message.includes('Deprecation')) return;
+    //     console.warn(message);
+    //   },
+    // },
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

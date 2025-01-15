@@ -1,0 +1,137 @@
+@use './variables' as *;
+@use './mixin' as *;
+@use './functions' as *;
+
+html,
+body {
+  height: auto;
+  min-height: 100vh;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  @include mo {
+    font-size: movw(13);
+  }
+
+  @include pc {
+    font-size: pcvw(14);
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+
+  @include mo {
+    gap: movw(16);
+  }
+
+  @include pc {
+    gap: pcvw(24);
+  }
+}
+
+#header,
+#main,
+#footer {
+  width: 100%;
+}
+
+#header {
+  position: sticky;
+  top: 0;
+
+  .c_inner {
+    border-bottom: pcvw(1) solid #ddd;
+  }
+
+  .gnb_list {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+
+    @include mo {
+      font-size: movw(14);
+      gap: pcvw(20);
+      padding: movw(16) 0;
+    }
+
+    @include pc {
+      font-size: pcvw(18);
+      gap: pcvw(12);
+      padding: pcvw(24) 0;
+    }
+  }
+}
+
+#main {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100%;
+
+  @include mo {
+    flex-direction: column;
+    padding: 0 movw($pd);
+    gap: movw($pd);
+
+    h2 {
+      font-size: movw(18);
+    }
+  }
+
+  @include pc {
+    flex-direction: row;
+    margin-top: pcvw(24);
+    padding: 0 pcvw($pd);
+    gap: pcvw($pd);
+    max-width: ($pc_max) * 1px;
+
+    h2 {
+      font-size: pcvw(32);
+    }
+  }
+}
+
+#footer {
+  margin-top: auto;
+
+  .c_inner {
+    border-top: pcvw(1) solid #ddd;
+
+    p {
+      @include mo {
+        padding: movw(16) 0;
+      }
+
+      @include pc {
+        padding: pcvw(24) 0;
+      }
+    }
+  }
+}
+
+.c_inner {
+  margin: 0 auto;
+  width: 100%;
+
+  @include mo {
+    padding: 0 movw($pd);
+  }
+
+  @include pc {
+    padding: 0 pcvw($pd);
+    max-width: ($pc_max) * 1px;
+  }
+}
