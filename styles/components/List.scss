@@ -1,0 +1,21 @@
+.page-title {
+  display: block;
+}
+
+.photo- {
+  &list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &item {
+    width: 33.3%;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

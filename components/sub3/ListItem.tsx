@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function ListItem({ listInfo }: { listInfo: Photo }) {
   return (
-    <li>
+    <li className='photo-item'>
       <Link href={`/sub3/detail/${listInfo.id}`}>
         <Image
           src={listInfo.thumbnailUrl}

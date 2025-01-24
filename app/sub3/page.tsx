@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import List from '@/components/sub3/List';
-import Providers from '@/components/common/Providers';
 import { getPhotoList } from '@/api/post';
 
 export const metadata: Metadata = {
@@ -26,9 +25,9 @@ export default async function Sub3() {
   const photos = await getPhotoList(1);
 
   return (
-    <Providers>
+    <section id='container'>
       <p>Sub-3 page content</p>
       <List initialData={photos} />
-    </Providers>
+    </section>
   );
 }

@@ -33,13 +33,13 @@ body {
   height: 100%;
   min-height: 100vh;
 
-  @include mo {
-    gap: movw(16);
-  }
+  // @include mo {
+  //   gap: movw(16);
+  // }
 
-  @include pc {
-    gap: pcvw(24);
-  }
+  // @include pc {
+  //   gap: pcvw(24);
+  // }
 }
 
 #header,
