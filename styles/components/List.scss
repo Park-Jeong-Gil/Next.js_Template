@@ -2,6 +2,8 @@
 @use '../common/mixin' as *;
 @use '../common/functions' as *;
 
+@use './ListItems.scss' as *;
+
 .page-title {
   display: block;
   margin: pcvw(24) 0;
@@ -14,29 +16,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: pcvw(16);
     margin-top: pcvw(24);
-  }
-
-  &item {
-    // width: 33.3%;
-
-    a {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      strong {
-        font-size: pcvw(16);
-        font-weight: 600;
-        margin-top: pcvw(8);
-      }
-    }
   }
 }
 
