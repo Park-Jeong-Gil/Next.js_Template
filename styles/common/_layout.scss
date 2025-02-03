@@ -51,9 +51,11 @@ body {
 #header {
   position: sticky;
   top: 0;
+  background-color: #ffffff05;
+  backdrop-filter: blur(10px);
 
   .c_inner {
-    border-bottom: pcvw(1) solid #ddd;
+    border-bottom: pcvw(1) solid #dddddd;
   }
 
   .gnb_list {
