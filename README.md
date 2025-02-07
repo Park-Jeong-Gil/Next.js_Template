@@ -54,16 +54,16 @@ src/
 - Node.js 18.x 이상
 - npm 또는 yarn
 
-### 개발 서버 실행
+### 설치 및 실행
 
+1. 의존성 설치:
+```bash
+npm install
+```
+
+2. 개발 서버 실행:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 프로젝트가 성공적으로 실행되면 [http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
